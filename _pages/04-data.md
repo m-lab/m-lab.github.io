@@ -11,24 +11,19 @@ breadcrumb: data
 
 M-Lab stores our canonical raw data in [Google Cloud Storage](https://console.developers.google.com/storage/browser/m-lab/). Google Cloud Storage contains all of our data in raw form (no parsing). Additionally, we parse a copy of our raw data for a subset of our tests into [BigQuery tables](https://bigquery.cloud.google.com/queries/measurement-lab), so that the data is queryable through a SQL interface. 
 
-Data collected since January 2009 for four M-Lab tests is available:
-
-- [Network Diagnostic Tool (NDT)](/tools/ndt/)
-- [Network Path and Application Diagnosis (NPAD)](/tools/npad/)
-- [Paris-Traceroute](/tools/paris-traceroute/)
-- [SideSream](/tools/sidestream)
-
 Raw data is updated hourly and BigQuery tables are updated every day with data from M-Lab logs collected the day before. As a consequence, there is typically at least a 24-hour delay between data collection and data publication.
 
-## Data License
+## Data License and Citing M-Lab Data
 
 All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved Creative Commons Zero Waiver](http://creativecommons.org/about/cc0).
 
-## Suggested Citation Format
-
-Please cite M-Lab datasets as follows, adjusting for the test name and data range cited:
+Please cite M-Lab datasets as follows:
  
-The M-Lab NDT Dataset, <date range used> https://measurementlab.net/tools/ndt
+- The M-Lab <pre>test name</pre> Dataset, <pre>date range used</pre> <pre>M-Lab test URL</pre>
+
+For example:
+
+- The M-Lab NDT Dataset 2009-02-11 - 2015-12-21 [https://measurementlab.net/tools/ndt](https://measurementlab.net/tools/ndt)
 
 ## Getting Started with M-Lab Data
 
