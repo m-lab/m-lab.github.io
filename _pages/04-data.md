@@ -19,11 +19,11 @@ All data collected by M-Lab tests are available to the public without restrictio
 
 Please cite M-Lab datasets as follows:
  
-- The M-Lab `test name` Dataset, `date range used`. `M-Lab test URL`
+- The M-Lab _test name_ Dataset, _date range used_. _M-Lab test URL_
 
 For example:
 
-- The M-Lab NDT Dataset 2009-02-11 - 2015-12-21 [https://measurementlab.net/tools/ndt](https://measurementlab.net/tools/ndt)
+- The M-Lab NDT Dataset 2009-02-11 - 2015-12-21. [https://measurementlab.net/tools/ndt](https://measurementlab.net/tools/ndt)
 
 ## Getting Started with M-Lab Data
 
