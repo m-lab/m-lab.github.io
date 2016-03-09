@@ -19,7 +19,7 @@ All data collected by M-Lab tests are available to the public without restrictio
 
 Please cite M-Lab datasets as follows:
  
-- The M-Lab <pre>test name</pre> Dataset, <pre>date range used</pre> <pre>M-Lab test URL</pre>
+- The M-Lab `test name` Dataset, `date range used`. `M-Lab test URL`
 
 For example:
 
