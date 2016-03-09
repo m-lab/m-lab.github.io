@@ -64,7 +64,7 @@ Download and Install [Google’s Cloud SDK](https://cloud.google.com/sdk/) using
 
 After installation, authentication and restarting your terminal, BigQuery’s command line tools are available in your shell. If you are new to BigQuery, we suggest that you next consult the resources below to get started: 
 
-- [M-Lab's BigWuery QuickStart Guide](/data/bq/quickstart/)
+- [M-Lab's BigQuery QuickStart Guide](/data/bq/quickstart/)
 - [Google’s BigQuery documentation](https://cloud.google.com/bigquery/what-is-bigquery)
 - [Google's bq Command-Line Tool Quickstart documentation](https://cloud.google.com/bigquery/bq-command-line-tool-quickstart)
 
