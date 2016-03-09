@@ -9,7 +9,7 @@ breadcrumb: data
 
 # About M-Lab's Data  
 
-M-Lab stores our canonical raw data in [Google Cloud Storage](https://console.developers.google.com/storage/browser/m-lab/) and makes that same data available for querying via [Google's BigQuery platform](https://bigquery.cloud.google.com/queries/measurement-lab). 
+M-Lab stores our canonical raw data in [Google Cloud Storage](https://console.developers.google.com/storage/browser/m-lab/). Google Cloud Storage contains all of our data in raw form (no parsing). Additionally, we parse a copy of our raw data for a subset of our tests into [BigQuery tables](https://bigquery.cloud.google.com/queries/measurement-lab), so that the data is queryable through a SQL interface. 
 
 Data collected since January 2009 for four M-Lab tests is available:
 
@@ -19,6 +19,17 @@ Data collected since January 2009 for four M-Lab tests is available:
 - [SideSream](/tools/sidestream)
 
 Raw data is updated hourly and BigQuery tables are updated every day with data from M-Lab logs collected the day before. As a consequence, there is typically at least a 24-hour delay between data collection and data publication.
+
+## Data License
+
+All data collected by M-Lab tests are available to the public without restriction under a [No Rights Reserved Creative Commons Zero Waiver](http://creativecommons.org/about/cc0).
+
+## Suggested Citation Format
+
+Please cite M-Lab datasets as follows, adjusting for the test name and data range cited:
+ 
+**The M-Lab NDT Dataset, <date range used> https://measurementlab.net/tools/ndt**
+
 
 ## Getting Started with M-Lab Data
 
