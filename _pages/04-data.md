@@ -28,8 +28,7 @@ All data collected by M-Lab tests are available to the public without restrictio
 
 Please cite M-Lab datasets as follows, adjusting for the test name and data range cited:
  
-**The M-Lab NDT Dataset, <date range used> https://measurementlab.net/tools/ndt**
-
+The M-Lab NDT Dataset, <date range used> https://measurementlab.net/tools/ndt
 
 ## Getting Started with M-Lab Data
 
