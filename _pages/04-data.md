@@ -74,4 +74,4 @@ Given the resources and expertise, you can develop your own web application that
 
 **Telescope** is an example of an application that M-Lab developed which uses the BigQuery Python API to download M-Lab data.
 
-Telescope is available at Github here: https://github.com/m-lab/telescope
+[Telescope is available from M-Lab on Github](https://github.com/m-lab/telescope).
