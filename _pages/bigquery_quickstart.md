@@ -23,7 +23,7 @@ You will **not** be charged for queries against tables in the M-Lab dataset. M-L
 
 ## BigQuery Web Interface
 
-M-Lab data is easily queried using Google’s web interface to BigQuery. Learn more on our [BigQuery QuickStart page](/data/bq/quickstart/). 
+M-Lab data is easily queried using Google’s [web interface to BigQuery](https://bigquery.cloud.google.com).
 
 ## BigQuery tools in the Google Cloud SDK
 
@@ -33,7 +33,6 @@ Download and Install [Google’s Cloud SDK](https://cloud.google.com/sdk/) using
 
 After installation, authentication and restarting your terminal, BigQuery’s command line tools are available in your shell. If you are new to BigQuery, we suggest that you next consult the resources below to get started: 
 
--   [M-Lab's BigQuery QuickStart Guide](/data/bq/quickstart/)
 -   [Google’s BigQuery documentation](https://cloud.google.com/bigquery/what-is-bigquery)
 -   [Google's bq Command-Line Tool Quickstart documentation](https://cloud.google.com/bigquery/bq-command-line-tool-quickstart)
 
