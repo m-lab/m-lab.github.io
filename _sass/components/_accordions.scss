@@ -25,7 +25,7 @@
   .accordion-content {
   	ul {
   		padding-bottom: 25px;
-      @include list_bullets(circle, 0px 0px 0px 20px);
+      @include list_bullets(circle);
     }
   }
 }
