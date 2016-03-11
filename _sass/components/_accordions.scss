@@ -9,7 +9,7 @@
   }
 
   &.is-collapsed { 
-  	p:last-child {
+    p:last-child {
       padding-bottom: 25px;
     }
 
@@ -24,7 +24,7 @@
 
   .accordion-content {
   	ul {
-  		padding-bottom: 25px;
+      padding-bottom: 25px;
       @include list_bullets(circle);
     }
   }
