@@ -12,6 +12,14 @@ Current Build Status is: [![Build Status](https://secure.travis-ci.org/m-lab/m-l
 2. Run Jekyll server and pass in a blank baseurl to preview in development mode `jekyll serve --baseurl`.
 3. View the generated site by going to [http://localhost:4000/](http://localhost:4000/)
 
+### Pre-commit Hook
+
+Local Developers should also install the pre-commit hook that comes packaged
+with this repository that will alert and automatically remove trailing
+whitespaces to minimize git diff noise.  In order to install the pre-commit
+hook, run the following command to create a symbolic link:
+``ln -s ../../pre-commit .git/hooks/pre-commit``.
+
 ### HTML Compression
 
 This site enables HTML Compression for optimizing performance.  If it is desired to not compress pages while doing development, developers can simply remove the ``layout: compress`` from the default template in the _layouts folder.
