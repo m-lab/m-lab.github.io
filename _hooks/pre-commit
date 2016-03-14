@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+
+# A git hook script that checks for trailing whitespace
+# in your commits. Bypass it with the --no-verify option
+# to git-commit
+#
+# usage: make a soft link to this file,
+# e.g., ln -s ~/config/pre-commit.git.sh ~/some_project/.git/hooks/pre-commit
+
+if test "$(git diff --check --cached)"
+then
+  echo "**********************************************************"
+  echo -e "*  \033[31mCOMMIT ABORTED! Please removing trailing whitespaces.\033[0m"
+  echo -e "*  This can be done automatically for each file by using the following command:"
+  echo -e "*  \033[46msed -ie 's/[[:space:]]*$//' <filename>\033[0m"
+  echo "**********************************************************"
+  echo ""
+  git diff --check --cached
+else
+	exit 0
+fi
