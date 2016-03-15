@@ -14,7 +14,7 @@ Current Build Status is: [![Build Status](https://secure.travis-ci.org/m-lab/m-l
 
 ### Pre-commit Hook
 
-Local Developers should also install the pre-commit hook that comes packaged with this repository that will alert about any trailing whitespaces to minimize git diff noise.  In order to install the pre-commit hook, run the following command to create a symbolic link: ``rm -rf .git/hooks/ && ln -s -f ../_hooks .git/``.
+Local Developers should also install the pre-commit hook that comes packaged with this repository that will alert about any trailing whitespaces to minimize git diff noise.  In order to install the pre-commit hook, run the following command to create a symbolic link: ```rm -rf .git/hooks/ && ln -s -f ../_hooks .git/```.
 
 ### HTML Compression
 
