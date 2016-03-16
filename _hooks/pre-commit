@@ -1,22 +1,23 @@
 #!/bin/bash
 #
 
-# A git hook script that checks for trailing whitespace
-# in your commits. Bypass it with the --no-verify option
-# to git-commit
+# A git hook script that runs the same checks that are 
+# executed on Travis to verify your commits will not fail.
+# Bypass it with the --no-verify option to git-commit
 #
-# usage: make a soft link to this file,
-# e.g., ln -s ~/config/pre-commit.git.sh ~/some_project/.git/hooks/pre-commit
+# usage: make a symlink to this file,
+# e.g., rm -rf .git/hooks/ && ln -s -f ../_hooks .git/hooks
 
-if test "$(git diff --check --cached)"
-then
+# Run 
+./_tests/travis-checks.sh --disable-external
+
+if [ $? -eq 0 ]; then
+    exit 0
+else
   echo "**********************************************************"
-  echo -e "*  \033[31mCOMMIT ABORTED! Please removing trailing whitespaces.\033[0m"
-  echo -e "*  This can be done automatically for each file by using the following command:"
-  echo -e "*  \033[46msed -ie 's/[[:space:]]*$//' <filename>\033[0m"
+  echo -e "*  \033[31mCOMMIT ABORTED! Please address the errors before commiting.\033[0m"
+#  echo -e "*  This can be done automatically for each file by using the following command:"
+#  echo -e "*  \033[46msed -ie 's/[[:space:]]*$//' <filename>\033[0m"
   echo "**********************************************************"
   echo ""
-  git diff --check --cached
-else
-	exit 0
 fi
