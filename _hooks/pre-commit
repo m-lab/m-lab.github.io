@@ -16,8 +16,6 @@ if [ $? -eq 0 ]; then
 else
   echo "**********************************************************"
   echo -e "*  \033[31mCOMMIT ABORTED! Please address the errors before commiting.\033[0m"
-#  echo -e "*  This can be done automatically for each file by using the following command:"
-#  echo -e "*  \033[46msed -ie 's/[[:space:]]*$//' <filename>\033[0m"
   echo "**********************************************************"
   echo ""
 fi
