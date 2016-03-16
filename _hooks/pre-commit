@@ -7,14 +7,8 @@
 # usage: make a symlink to this file,
 # e.g., rm -rf .git/hooks/ && ln -s -f ../_hooks .git/hooks
 
-#######################################
-# Error function to display error message to end users.
-# Arguments:
-#   Error message description
-#######################################
 err() {
-  echo "$@"
-  exit 1
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
 }
 
 ./_tests/travis-checks --quick
@@ -23,4 +17,5 @@ if [ $? -eq 0 ]; then
   exit 0
 else
 	err "COMMIT ABORTED! Please address the errors before commiting."
+	exit 1
 fi
