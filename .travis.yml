@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.2.3
 script:
-  - ./_tests/travis-checks.sh
+  - ./_tests/travis-checks
 branches:
   only:
   - master
