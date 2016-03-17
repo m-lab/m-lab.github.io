@@ -16,6 +16,6 @@ err() {
 if [ $? -eq 0 ]; then
   exit 0
 else
-	err "COMMIT ABORTED! Please address the errors before commiting."
-	exit 1
+  err "COMMIT ABORTED! Please address the errors before commiting."
+  exit 1
 fi
