@@ -2,43 +2,54 @@
 layout: default
 ---
 
-{% include breadcrumbs.html %}
+<div class="container">
+  <div class="row">
 
-<div class="l-span2 blogroll">
+    {% include breadcrumbs.html %}
 
-  <article class="blog-entry">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 blogroll">
 
-    {{ content }}
+          <article class="blog-entry">
 
-    <footer class="meta">
-      <small>Posted by <b class="author">{{ page.author }}</b> on <span class="published">{{ page.date | date: "%Y-%m-%d" }}</span>
+            {{ content }}
 
-      {% if page.categories.size > 0 %}
-        <span class="categories">
-         filed under
+            <footer class="meta">
+              <small>Posted by <b class="author">{{ page.author }}</b> on <span class="published">{{ page.date | date: "%Y-%m-%d" }}</span>
 
-        {% for cat in page.categories %}
-          <a href="{{ site.baseurl }}/blog/category/{{ cat | replace: ' ', '-' }}/">{{ cat }}</a>{% unless forloop.last %},{% endunless %}
-        {% endfor %}
+              {% if page.categories.size > 0 %}
+                <span class="categories">
+                 filed under
 
-        </span>
-      {% endif %}
+                {% for cat in page.categories %}
+                  <a href="{{ site.baseurl }}/blog/category/{{ cat | replace: ' ', '-' }}/">{{ cat }}</a>{% unless forloop.last %},{% endunless %}
+                {% endfor %}
 
-      </small>
-    </footer>
+                </span>
+              {% endif %}
 
-  </article>
+              </small>
+            </footer>
+
+          </article>
 
 
-  <ol class="pagination">
-  
-    <li>{% if page.next.url %}<a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" class="next dir is-plain">Next<i class="icon icon-triangle icon-right icon-after"></i></a>{% endif %}</li>
-  
-    <li>{% if page.previous.url %}<a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" class="previous dir is-plain"><i class="icon icon-triangle icon-left icon-before"></i>Previous</a>{% endif %}</li>
+          <ol class="pagination">
+          
+            <li>{% if page.next.url %}<a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" class="next dir is-plain">Next<i class="icon icon-triangle icon-right icon-after"></i></a>{% endif %}</li>
+          
+            <li>{% if page.previous.url %}<a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" class="previous dir is-plain"><i class="icon icon-triangle icon-left icon-before"></i>Previous</a>{% endif %}</li>
 
-  </ol> <!-- .pagination -->
+          </ol> <!-- .pagination -->
 
-</div> <!-- .blogroll -->
+        </div> <!-- .blogroll -->
 
-{% include siderail.html %}
+        {% include siderail.html %}
 
+
+      </div><!--row-->
+    </div><!--container-->
+
+  </div><!--row-->
+</div><!--container-->

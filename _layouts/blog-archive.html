@@ -10,37 +10,48 @@ layout: default
   {% assign posts = site.posts %}
 {% endif %}
 
-{% include breadcrumbs.html %}
+<div class="container">
+  <div class="row">
 
-<div class="l-span2 blogroll">
+    {% include breadcrumbs.html %}
 
-{% for post in posts %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 blogroll">
 
-  {% assign show-post = true %}
+        {% for post in posts %}
 
-  {% if page.archive-type == 'Monthly' %}
-    {% assign thisyear = post.date | date: "%B %Y" %}
-    {% if thisyear != page.archive-name %}
-      {% assign show-post = false %}
-    {% endif %}
-  {% endif %}
+          {% assign show-post = true %}
 
-  {% if show-post %}
+          {% if page.archive-type == 'Monthly' %}
+            {% assign thisyear = post.date | date: "%B %Y" %}
+            {% if thisyear != page.archive-name %}
+              {% assign show-post = false %}
+            {% endif %}
+          {% endif %}
 
-    <article class="blog-entry">
-      {% if post.content contains '<!--more-->' %}
-          {{ post.content | split:'<!--more-->' | first }}
-      {% else %}
-          {{ post.excerpt }}
-      {% endif %}
-      <p><a href="{{ site.baseurl }}{{ post.url }}" class="info-link">Read More</a></p>
-    </article>
+          {% if show-post %}
 
-  {% endif %}
+            <article class="blog-entry">
+              {% if post.content contains '<!--more-->' %}
+                  {{ post.content | split:'<!--more-->' | first }}
+              {% else %}
+                  {{ post.excerpt }}
+              {% endif %}
+              <p><a href="{{ site.baseurl }}{{ post.url }}" class="info-link">Read More</a></p>
+            </article>
 
-{% endfor %}
+          {% endif %}
 
-</div>
+        {% endfor %}
 
-{% include siderail.html %}
+        </div>
+
+        {% include siderail.html %}
+
+      </div><!--row-->
+    </div><!--container-->
+
+  </div><!--row-->
+</div><!--container-->
 

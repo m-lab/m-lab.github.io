@@ -69,11 +69,10 @@
       <div id="download" class="test">
         <h2 class="centered">Now testing your <em>download speed</em></h2>
       </div>
-      <canvas id="uploadGauge"></canvas>
-      <div id="rtt">RTT
-        <div id="rttValue"></div>
+      <div class="guage-container">
+          <canvas id="uploadGauge"></canvas>
+          <canvas id="downloadGauge"></canvas>
       </div>
-      <canvas id="downloadGauge"></canvas>
       <div class="locations">
         <div class="local location"></div>
         <div class="remote location">
@@ -83,12 +82,19 @@
       </div>
     </div>
     <div id="results" class="summary page">
-      <h2>Your test results</h2>
-      <div class="view-selector">
-        <span class="summary button">Summary</span>
-        <span class="details button">Details</span>
-        <span class="advanced button">Advanced</span>
+      <div>
+        <div class="title-container">
+          <h2>Your test results</h2>
+        </div>
+        <div class="view-selector-container">
+          <div class="view-selector">
+            <span class="summary button">Summary</span>
+            <span class="details button">Details</span>
+            <span class="advanced button">Advanced</span>
+          </div>
+        </div>
       </div>
+      <div class="clearfix"></div>
       <div id="result-pages">
         <div class="result-page summary">
           <div class="upload result">

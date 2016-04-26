@@ -6,16 +6,17 @@ menu-item: true
 grid-quick-links: true
 grid-section:
   - group-heading: "Performance"
+    group-description: "Performance tests measure basic and advanced performance characteristics of your network, such as speed, latency, jitter, and much more."
     group-list-class: "l-grid l-3col"
     grid-items:
       - link: "/tools/ndt/"
         image: "ndt.png"
         heading: "NDT (Network Diagnostic Test)"
-        desc: "Test your connection speed and recieve sophisticated diagnosis of problems limiting speed."
+        desc: "Tests your connection speed, and provides a sophisticated diagnosis of problems limiting speed."
       - link: "/tools/npad/"
         image: "npad.png"
         heading: "NPAD (Network Path &amp; Application Diagnostics)"
-        desc: "Diagnose common problems that impact last-mile broadband networks."
+        desc: "Diagnoses common problems that impact last-mile broadband networks."
       - link: "/tools/neubot/"
         image: "neubot.png"
         heading: "Neubot"
@@ -23,11 +24,11 @@ grid-section:
       - link: "/tools/pathload2/"
         image: "pathload2.png"
         heading: "Pathload2"
-        desc: "Pathload2 has been decommissioned. However, the data and source code are still available."
+        desc: "Tested the available bandwidth of an Internet connection until it was decommissioned from the M-Lab platform on 12/21/2012. However, the data and source code are still available."
       - link: "/tools/bismark/"
         image: "neubot.png"
         heading: "BISmark"
-        desc: "Apply to host a home router that also tests network performance over time."
+        desc: "Allows you to apply to host a home router that also tests network performance over time."
       - link: "/tools/sidestream/"
         image: "sidestream.png"
         heading: "SideStream"
@@ -38,52 +39,47 @@ grid-section:
       - link: "/tools/mobiperf/"
         image: "mobile.png"
         heading: "MobiPerf"
-        desc: "MobiPerf is an application for measuring network performance on mobile platforms."
+        desc: "Measures network performance on mobile platforms."
       - link: "/tools/windrider/"
         image: "mobile.png"
         heading: "Windrider"
-        desc: "Windrider has been decommissioned on 01/17/2013. The source code is still available"
+        desc: "Attempted to detect whether a mobile provider was performing application or service specific differentiation until it was decommissioned on 01/17/2013. The source code is still available."
   - group-heading: "Transparency"
+    group-description: "Transparency tests provide insight into network management practices, such as application-specific blocking, throttling, traffic shaping, and other practices that determine your ability to use some applications or to access some content on the Internet."
     group-list-class: "l-grid l-3col"
     grid-items:
       - link: "/tools/ooni/"
         image: "ooni.png"
         heading: "OONI Probe"
-        desc: "The Open Observatory for Network Interference measures specific use cases of network interference."
+        desc: "Measures specific use cases of network interference."
       - link: "/tools/glasnost/"
         image: "glasnost.png"
         heading: "Glasnost"
-        desc: "Test for application-specific blocking or throttling."
+        desc: "Tests for application-specific blocking or throttling."
       - link: "/tools/neubot/"
         image: "neubot.png"
         heading: "Neubot"
-        desc: "Performs periodic tests to measure network performance and application-specific traffic throttling."
-  - group-heading: "State"
+        desc: "Performs periodic tests to measure network performance and traffic throttling."
+  - group-heading: "Network State"
+    group-description: "Tests in this section provide information on the state of the network you are connected to and the details of the network environment. For example, tests could check to see if IPv6 is enabled, or collect traceroute data or other information about the network that can provide context for other measurements, such as upload or download speed."
     group-list-class: "l-grid l-3col"
     grid-items:
       - link: "/tools/paris_traceroute/"
         image: "arrow-swoop.png"
         heading: "Paris Traceroute"
-        desc: "Paris Traceroute collects paris-traceroute traces for every TCP connection to the M-Lab platform."
+        desc: "Collects network path information for every connection to the M-Lab platform."
       - link: "/tools/reverse_traceroute/"
         image: "arrow-swoop.png"
         heading: "Reverse Traceroute"
-        desc: "Reverse traceroute measures the network path back to a user from selected network endpoints."
+        desc: "Measures the network path back to a user from selected network endpoints."
 ---
 
-# M-Lab&#39;s Internet Measurement Tools
+# Internet Measurement Tests
 
-M-Lab offers a number of measurement tools, allowing you to test for everything from network speed and latency to blocking and throttling. Explore these below, and run a test to learn more about your connection.
+M-Lab hosts a number of measurement tests, allowing you to check for everything from network speed and latency to blocking and throttling. Explore them below, and run a test to learn more about your connection.
 
-## About the tools
+All tests hosted on M-Lab only perform active measurements. This means that tests only run when people decide to run them-- tests do not passively monitor your connection. M-Lab hosted tests do not download or upload files to or from your device. Instead tests measure the way in which the network responds to a synthetic stream of data that is generated by the individual test specifically for the purpose of measurement. The tests do not collect information about your other Internet traffic, such as your emails or web searches, or any personally identifiable information. For more information, see our [privacy policy]({{ site.baseurl }}/privacy).
 
-The tools are divided into three categories:
+* All data collected will be made publicly available, including IP addresses.
+* All tests are open source and created by researchers.
 
-- **Performance:** measures the basic (and not so basic) performance characteristics of your network: speed, latency, jitter and much more.
-- **Transparency:** provides insight into network management practices such as application-specific blocking, throttling, traffic shaping, and other practices that determine your access to applications and content.
-- **State:** gives information on the state of the network and the host environments, such as whether IPv6 is enabled, traceroute data, and other information that provides context.
-
-All tools perform only active measurements against the M-Lab platform. This means that what is measured is the way in which the network responded to a synthetic stream of data generated by the individual tool for the purpose of measurement. *The tools do not collect information about your other Internet traffic, such as your emails, web searches, etc., or any personally identifiable information*. For more information, see our [privacy policy]({{ site.baseurl }}/privacy).
-
-All data collected will be made publicly available, including IP address.<br />
-All tools are open source and created by researchers.

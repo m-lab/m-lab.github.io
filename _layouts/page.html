@@ -2,46 +2,51 @@
 layout: default
 ---
 
-{% include breadcrumbs.html %}
-
 <meta data-id="enhancer" data-classname="SubPageEnhancer">
+<div class="container">
+	<div class="row">
 
-{% if page.grid-section and page.grid-quick-links %}
-<nav class="quick-links l-span2">
-	<ul class="l-span1">
-          	
-  	{% for grid in page.grid-section %}
+	{% include breadcrumbs.html %}
 
-		<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a></li>
+	{% if page.grid-section and page.grid-quick-links %}
+	<nav class="quick-links l-span2">
+		<ul class="l-span1">
 
+	  	{% for grid in page.grid-section %}
+
+			<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a></li>
+
+			{% endfor %}
+
+		</ul>
+	</nav>
+	{% elsif page.accordion-quick-links %}
+	<nav class="quick-links l-span2">
+		{% for col in page.quick-links-section %}
+		<ul class="l-span1">
+
+	  	{% for link in col.column %}
+
+			<li><a href="#{{ link.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ link.group-heading }}</a></li>
+
+			{% endfor %}
+
+		</ul>
 		{% endfor %}
+	</nav>
+	{% endif %}
 
-	</ul>
-</nav>
-{% elsif page.accordion-quick-links %}
-<nav class="quick-links l-span2">
-	{% for col in page.quick-links-section %}	
-	<ul class="l-span1">
-          	
-  	{% for link in col.column %}
+	<section class="intro-section">
 
-		<li><a href="#{{ link.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ link.group-heading }}</a></li>
+	  {{ content }}
 
-		{% endfor %}
+	</section>
 
-	</ul>
-	{% endfor %}
-</nav>
-{% endif %}
+	{% if page.grid-section %}
+		{% include grid.html %}
+	{% endif %}
 
-<section class="intro-section">
+	</div><!--row-->
+</div><!--container-->
 
-  {{ content }}
-
-</section>
-
-{% if page.grid-section %}
-	{% include grid.html %}
-{% endif %}
-
-</div>
+</div><!--subpage-content-->

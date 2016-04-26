@@ -2,51 +2,62 @@
 layout: default
 ---
 
-{% include breadcrumbs.html %}
+<div class="container">
+  <div class="row">
 
-<div class="l-span2 blogroll">
+    {% include breadcrumbs.html %}
 
-  {% for post in paginator.posts %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 blogroll">
 
-  <article class="blog-entry">
+          {% for post in paginator.posts %}
 
-    {{ post.content }}
+          <article class="blog-entry">
 
-    <footer class="meta">
-      <small>Posted by <b class="author">{{ post.author }}</b> on <span class="published">{{ post.date | date: "%Y-%m-%d" }}</span> 
+            {{ post.content }}
 
-      {% if post.categories.size > 0 %}             
-        filed under 
-        <span class="categories">
+            <footer class="meta">
+              <small>Posted by <b class="author">{{ post.author }}</b> on <span class="published">{{ post.date | date: "%Y-%m-%d" }}</span> 
 
-        {% for cat in post.categories %}
-          <a href="{{ site.baseurl }}/blog/category/{{ cat | replace: ' ', '-' }}/">{{ cat }}</a>{% unless forloop.last %},{% endunless %}
-        {% endfor %}
+              {% if post.categories.size > 0 %}             
+                filed under 
+                <span class="categories">
 
-        </span>
-      {% endif %}
+                {% for cat in post.categories %}
+                  <a href="{{ site.baseurl }}/blog/category/{{ cat | replace: ' ', '-' }}/">{{ cat }}</a>{% unless forloop.last %},{% endunless %}
+                {% endfor %}
 
-      </small>
-    </footer>
+                </span>
+              {% endif %}
 
-  </article> <!-- .blog-entry -->
-  
-  {% endfor %}
+              </small>
+            </footer>
 
-  {% if paginator.total_pages > 1 %}
-  <ol class="pagination">
-    {% if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next dir is-plain">Next<i class="icon icon-triangle icon-right icon-after"></i></a></li>
-    {% endif %}
+          </article> <!-- .blog-entry -->
+          
+          {% endfor %}
 
-    {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous dir is-plain"><i class="icon icon-triangle icon-left icon-before"></i>Previous</a></li>
-    {% endif %}
+          {% if paginator.total_pages > 1 %}
+          <ol class="pagination">
+            {% if paginator.next_page %}
+              <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next dir is-plain">Next<i class="icon icon-triangle icon-right icon-after"></i></a></li>
+            {% endif %}
 
-  </ol> <!-- .pagination -->
-  {% endif %}
+            {% if paginator.previous_page %}
+              <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous dir is-plain"><i class="icon icon-triangle icon-left icon-before"></i>Previous</a></li>
+            {% endif %}
 
-</div> <!-- .blogroll -->
+          </ol> <!-- .pagination -->
+          {% endif %}
 
-{% include siderail.html %}
+        </div> <!-- .blogroll -->
+
+        {% include siderail.html %}
+
+      </div><!--row-->
+    </div><!--container-->
+
+  </div><!--row-->
+</div><!--container-->
 
