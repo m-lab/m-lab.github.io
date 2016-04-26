@@ -19,7 +19,7 @@ Let's start with something simple. How many distinct users (distinct IPs, for si
 ~~~sql
 SELECT
   COUNT(DISTINCT web100_log_entry.connection_spec.remote_ip) AS num_clients
-FROM{:target="_blank"}
+FROM
   plx.google:m_lab.ndt.all
 WHERE
   web100_log_entry.connection_spec.remote_ip IS NOT NULL;

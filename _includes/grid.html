@@ -1,9 +1,9 @@
-{% comment %} 
+{% comment %}
 <!--
   "Tools" Grid Feature
 
-  This file constitutes a dynamic grid feature displaying images and blurbs 
-  grouped by a category.  The grid will display up to 3 items per row and will 
+  This file constitutes a dynamic grid feature displaying images and blurbs
+  grouped by a category.  The grid will display up to 3 items per row and will
   automatically handle overflows of items to subsequent rows.
 
   In order to include this grid, a page needs to have:
@@ -12,7 +12,7 @@
 
   An example of this feature is found on the /tests/ page displaying measurement
   tools and is currently included as part of the page.html layout
---> 
+-->
 {% endcomment %}
 
 {% assign img_dir = "" %}
@@ -29,6 +29,7 @@
     <section class="info-section grid-section first-child {{ grid.group-heading | downcase | replace: " ", "-" }}">
     <div class="row">
       <h2 class="grid-header col-xs-12" id="{{ grid.group-heading | downcase | replace: " ", "-" }}">{{ grid.group-heading }}</h2>
+      {% if grid.group-description %}{{ grid.group-description }}{% endif %}
     </div>
     <div class="row">
       <ul class="{{ grid.group-list-class }}">
@@ -49,7 +50,7 @@
             {% else %}
             <img src="{{ site.baseurl }}/images{{ img_dir }}/{{ item.image }}" alt="{{ item.alt }}" class="grid-link is-plain">
             {% endif %}
-          
+
           {% if item.link %}
           </a>
           {% endif %}

@@ -14,9 +14,7 @@ layout: default
 
 	  	{% for grid in page.grid-section %}
 
-			<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a>
-			{% if grid.group-description %}<br />{{ grid.group-description }}
-			{% endif %}</li>
+			<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a></li>
 
 			{% endfor %}
 

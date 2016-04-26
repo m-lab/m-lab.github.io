@@ -163,9 +163,6 @@ grid-section:
 
 # Who we are
 
-M-Lab was founded by [New America's Open Technology Institute (OTI)](https://www.newamerica.org/oti/), the [PlanetLab Consortium](http://planet-lab.org/), Google Inc. and academic researchers. The founding members collectively make up the steering committee that will lead development of M-Lab's organizational policies and structure going forward.
-
-M-Lab is intended to operate as a community-based effort. We currently receive assistance from M-Lab supporting partners, and we welcome others who would like to contribute to the platform's growth and success. In order for M-Lab to achieve its objectives, it depends on the participation of additional companies, institutions and researchers. [Learn how to get involved]({{ site.baseurl }}/contribute/).
 M-Lab was founded by [New America's Open Technology Institute (OTI)](https://www.newamerica.org/oti/), the [PlanetLab Consortium](http://planet-lab.org/), Google Inc., and academic researchers. The founding members collectively make up the steering committee that will lead the development of M-Lab’s organizational policies and structure going forward.
 
 M-Lab is intended to operate as a community-based effort. We currently receive assistance from M-Lab supporting partners, and we welcome others who would like to contribute to the platform's growth and success. In order for M-Lab to achieve its objectives, it depends on the participation of additional companies, institutions, and researchers. Learn how to [get involved]({{ site.baseurl }}/contribute).
