@@ -28,11 +28,6 @@ carousel-items:
     caption: "Test your connection speed and receive a sophisticated diagnosis of problems limiting performance."
     link: "/tools/ndt/"
     link-text: "Go to NDT (Network Diagnostic Test)"
-  - image: ""
-    heading: "Making It Easier to Use M-Lab Data"
-    caption: "Updated BigQuery tables provide significant performance improvements for queries."
-    link: "/blog/new-tables-release/"
-    link-text: "Read more"
 ---
 
 **M-Lab provides the largest collection of open Internet performance data on the planet.** As a consortium of research, industry, and public-interest partners, M-Lab is dedicated to providing an ecosystem for the open, verifiable measurement of global network performance. Real science requires verifiable processes, and M-Lab welcomes scientific collaboration and scrutiny. This is why all of the data collected by M-Lab’s global measurement platform are made _openly available_, and all of the measurement tools hosted by M-Lab are _open source_. Anyone with time and skill can review and improve the underlying methodologies and assumptions on which M-Lab’s platform, tools, and data rely. Transparency and review are key to good science, and good science is key to good measurement.
