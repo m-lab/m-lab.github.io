@@ -15,7 +15,7 @@ breadcrumb: data
 * Each M-Lab tool consists of a **client** and a **server**.
 * Whenever an M-Lab user starts a test, the client and server interact to measure different aspects of that user's connection.
 * A single user request triggers one or more **tests** (e.g., client-to-server test, server-to-client test).
-* For each test, a server collects a **log** and the test can be uniquely identified by its log filename.
+* For each test, a server collects a **log**, and the test can be uniquely identified by its log filename.
 
 ## BigQuery Tables
 
@@ -28,19 +28,19 @@ M-Lab publishes data for each M-Lab project in its own BigQuery table:
 
 ### Legacy Tables
 
-M-Lab also publishes tables in its legacy, deprecated per-month format.
+M-Lab also publishes tables in its legacy, deprecated per-month format:
 
-* `plx.google:m_lab.YYYY_MM.all` (*deprecated*)
+`plx.google:m_lab.YYYY_MM.all` (*deprecated*)
 
 For example, data for March 2016 is published at:
 
-* `plx.google:m_lab.2016_03.all` (*deprecated*)
+`plx.google:m_lab.2016_03.all` (*deprecated*)
 
-M-Lab continues to support these tables, but urges clients to move to the new per-project tables, which yield substantially improved performance. See the [Legacy Migration Guide]({{ site.baseurl }}/data/bq/legacymigration) for details.
+M-Lab continues to support legacy tables but urges clients to move to the new per-project tables, which yield substantially improved performance. See the [Legacy Migration Guide]({{ site.baseurl }}/data/bq/legacymigration) for details.
 
 ## Schema Fields
 
-All M-Lab data shares the same data schema in BigQuery. The fields are described in the table below:
+All M-Lab data share the same data schema in BigQuery. The fields are described in the table below:
 
 <div class="table-responsive" markdown="1">
 
@@ -105,7 +105,7 @@ All M-Lab data shares the same data schema in BigQuery. The fields are described
 
 ### Deprecated Fields
 
-The following fields are deprecated and no longer have meaning in the dataset.
+The following fields are deprecated and no longer have meaning in the data set.
 
 * `type`
 * `project`
@@ -114,7 +114,7 @@ The following fields are deprecated and no longer have meaning in the dataset.
 
 ### Equivalent BigQuery and Web100 Field Types
 
-[tcp-kis.txt][1] defines each Web100 variable with a specific [SNMP type][2]. This table shows how to map each SNMP type to a BigQuery type.
+[tcp-kis.txt](https://cloud.google.com/bigquery/docs/tcp-kis.txt){:target="_blank"} defines each Web100 variable with a specific [SNMP type](http://tools.ietf.org/html/rfc4898){:target="_blank"}. This table shows how to map each SNMP type to a BigQuery type.
 
 | BigQuery Type |  Corresponding SNMP Type |
 | ------------- | -------------------------|
@@ -124,7 +124,4 @@ The following fields are deprecated and no longer have meaning in the dataset.
 
 ## Query Examples
 
-See [BigQuery Examples]({{ site.baseurl }}/data/bq/examples) for examples of BigQuery SQL that queries against this schema.
-
-[1]: https://cloud.google.com/bigquery/docs/tcp-kis.txt
-[2]: http://tools.ietf.org/html/rfc4898
+See [BigQuery Examples]({{ site.baseurl }}/data/bq/examples) for examples of queries against this schema.

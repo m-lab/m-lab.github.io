@@ -7,40 +7,20 @@ breadcrumb: tests
 
 # NDT (Network Diagnostic Test)
 
-NDT (Network Diagnostic Tool) provides a sophisticated speed and
-diagnostic test suitable for both the novice and the network researcher.
-Not only does NDT report upload and download speeds, it also attempts to
-determine what problems limited speeds, and provides details diagnostic
-reporting on what it found. While the diagnostic messages are most
-useful for expert users, they can also help novice users by allowing
-them to provide detailed trouble reports to their network administrator.
+NDT (Network Diagnostic Test) provides a sophisticated speed and diagnostic test suitable for both the novice and the network researcher. NDT reports upload and download speeds and attempts to determine what problems limit speeds. It also provides detailed diagnostic reporting on what it finds. While the diagnostic messages are most useful for expert users, they can also help novice users by allowing them to provide detailed trouble reports to their network administrator.
 
-## Run NDT
+There are two supported ways to **run an NDT test**: via this web page (see below) or via a Unix command-line tool (see link to the NDT source code below).
 
-There are two supported ways to run an NDT test: via this web page below
-or via a Unix command-line tool.
+NOTE: If the test does not run or takes longer than 60 seconds, please read the FAQ entry, "[How do I report issues with M-Lab tests]({{ site.baseurl }}/faq/#how-do-i-report-issues-with-m-lab-tests)"
 
-NOTE: if the test does not run or takes longer than 60 seconds, please
-read the [FAQ entry](http://www.measurementlab.net/faq) for "troubleshooting
-the NDT speed test".
+Please cite this data set as follows: **The M-Lab NDT Data Set, &lt;date range used&gt; https://measurementlab.net/tools/ndt**
 
-<div class="embed-responsive embed-responsive-4by3 ndt-iframe"><iframe src="{{ site.baseurl }}/p/ndt-ws.html" align="middle" class="embed-responsive-item"></iframe></div>
+**Data** collected by NDT is available:
 
-**Data** collected by NDT is available...
+* in raw format at [https://storage.cloud.google.com/m-lab/ndt](https://storage.cloud.google.com/m-lab/ndt){:target="_blank"}.
 
-- in raw format at <https://storage.cloud.google.com/m-lab/ndt>
-- via an SQL interface
-  (see <https://github.com/m-lab/mlab-wikis/blob/master/BigQueryMLabDataset.md>).
-- Visualized in [Public Data
-  Explorer](https://www.google.com/publicdata/explore?ds=e9krd11m38onf_&ctype=m&strail=false&bcs=d&nselm=s&met_s=number_of_tests&scale_s=lin&ind_s=false&ifdim=country&hl=en_US&dl=en_US&ind=false&xMax=180&xMin=-180&yMax=-54.423985288271695&yMin=81.24033645136825&mapType=t&icfg&iconSize=0.5).
-- Please cite this dataset as follows: **The MLab NDT Dataset,
-  &lt;date range used&gt;. http://measurementlab.net/tools/ndt**
+* in BigQuery at [https://www.measurementlab.net/data/bq/quickstart/]({{ site.baseurl }}/data/bq/quickstart/).
 
-**Source code** is available at <https://github.com/ndt-project/ndt/>.
+**Source code** is available at [https://github.com/ndt-project/ndt/](https://github.com/ndt-project/ndt/){:target="_blank"}.
 
-**More information** at <http://software.internet2.edu/ndt/>.
-
-NOTE: if the test does not run or takes longer than 60 seconds,\
-please read the FAQ entry for "troubleshooting the NDT speed test".
-
-
+**Get more information** at [http://software.internet2.edu/ndt/](http://software.internet2.edu/ndt/){:target="_blank"}.

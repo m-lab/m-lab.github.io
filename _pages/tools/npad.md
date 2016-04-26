@@ -7,21 +7,20 @@ breadcrumb: tests
 
 # NPAD (Network Path & Application Diagnostics)
 
-NPAD diagnoses a range of common performance issues affecting the last
-network mile and end-users' systems.
+NPAD diagnoses a range of common performance issues affecting the [last network mile](https://en.wikipedia.org/wiki/Last_mile){:target="_blank"} and end-users' systems.
 
-## **[Run NPAD](http://mlab-ns.appspot.com/npad?format=redirect){:.runlink}**
+[Run NPAD](http://mlab-ns.appspot.com/npad?format=redirect)
 
-## **[Download command line client](http://www.psc.edu/index.php/npad/645-pathdiagserverinstall#install){:.runlink}**
+[Download command-line client](http://www.psc.edu/index.php/npad/finish/112-npad/450-npad-1-5-6){:target="_blank"}
 
-**Data** collected by NPAD is available...
+Please cite this data set as follows: **The M-Lab NPAD Data Set, &lt;date range used&gt;. http://measurementlab.net/tools/npad
 
-- in raw format at <https://storage.cloud.google.com/m-lab/npad>
-- via an SQL interface
-    (see <https://github.com/m-lab/mlab-wikis/blob/master/BigQueryMLabDataset.md>).
+**Data** collected by NPAD is available:
 
-**Source code** is available at
-<http://www.psc.edu/index.php/networking/644-npad-diagnostic-pathdiag>.
+* in raw format at [https://storage.cloud.google.com/m-lab/npad](https://storage.cloud.google.com/m-lab/npad){:target="_blank"}.
 
-**More information** at
-[http://www.psc.edu/index.php/npad/645-pathdiagserverinstall\#about.](http://www.psc.edu/index.php/npad/645-pathdiagserverinstall#about)
+* in BigQuery at [https://www.measurementlab.net/data/bq/quickstart/]({{ site.baseurl }}/data/bq/quickstart/).
+
+**Source code** is available at [https://github.com/npad/npad](https://github.com/npad/npad){:target="_blank"}.
+
+**Get more information** at [http://www.ucar.edu/npad/](http://www.ucar.edu/npad/){:target="_blank"}

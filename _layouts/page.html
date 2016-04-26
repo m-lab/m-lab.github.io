@@ -11,10 +11,12 @@ layout: default
 	{% if page.grid-section and page.grid-quick-links %}
 	<nav class="quick-links l-span2">
 		<ul class="l-span1">
-	          	
+
 	  	{% for grid in page.grid-section %}
 
-			<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a></li>
+			<li><a href="#{{ grid.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ grid.group-heading }}</a>
+			{% if grid.group-description %}<br />{{ grid.group-description }}
+			{% endif %}</li>
 
 			{% endfor %}
 
@@ -22,9 +24,9 @@ layout: default
 	</nav>
 	{% elsif page.accordion-quick-links %}
 	<nav class="quick-links l-span2">
-		{% for col in page.quick-links-section %}	
+		{% for col in page.quick-links-section %}
 		<ul class="l-span1">
-	          	
+
 	  	{% for link in col.column %}
 
 			<li><a href="#{{ link.group-heading | downcase | replace: " ", "-" }}" data-proofer-ignore><i class="icon icon-triangle icon-right icon-before"></i>{{ link.group-heading }}</a></li>
