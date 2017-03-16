@@ -3,8 +3,6 @@ layout: page
 permalink: /tests/
 title: "Tests"
 menu-item: true
-redirect_from:
-  - /measurement-lab-tools
 grid-quick-links: true
 grid-section:
   - group-heading: "Performance"
