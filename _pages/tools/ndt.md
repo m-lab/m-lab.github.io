@@ -1,9 +1,8 @@
 ---
 layout: page
-permalink: /tests/ndt/
+permalink: /tools/ndt/
 title: "NDT (Network Diagnostic Test)"
 breadcrumb: tests
-redirect_from: /tools/ndt/
 ---
 
 # NDT (Network Diagnostic Test)

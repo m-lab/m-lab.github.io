@@ -38,7 +38,7 @@ kramdown:
 future: true
 
 # Gems
-gems: ['jekyll-paginate', 'jekyll-feed', 'jekyll-redirect-from']
+gems: ['jekyll-paginate', 'jekyll-feed']
 paginate: 1
 paginate_path: "/blog/page/:num"
 
