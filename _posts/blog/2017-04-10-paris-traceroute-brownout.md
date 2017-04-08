@@ -14,7 +14,7 @@ categories:
 
 In February 2017, M-Lab was notified of issues with the M-Lab data available in BigQuery. Upon investigation, a problem was identified with the Paris Traceroute collection daemon which resulted in a reduction in Paris Traceroute measurements beginning in June 2016. At the peak of the outage, fourth quarter 2016 - January 2017, approximately 5% of NDT tests had an associated Paris Traceroute test. Additionally, an issue within the data processing pipeline resulted in Paris Traceroute data that was measured and collected, not being inserted into the BigQuery tables and therefore available for use.<!--more-->
 
-Both defects were resolved in mid-February, additional monitoring was added, and BigQuery has been brought up to date with the available data. 
+Both defects were resolved in mid-February, additional monitoring was added, and BigQuery has been brought up to date with the available data.
 
 ## Details:
 
@@ -22,7 +22,7 @@ The bug was introduced in June 2016, when we deployed a new version of the Paris
 
 Paris Traceroute coverage of NDT jumped from 55-75%, which we had been seeing earlier in the year, to 85% shortly after the deployment.
 
-Unfortunately, while the first installation and startup demonstrated that the Paris Traceroute tool was a huge improvement, it had a race condition that frequently prevented it from restarting successfully when a server rebooted. Maintenance and updates to the M-Lab platform typically results in 5% to 20% of the servers rebooting each week, so the number of machines with properly operating Paris Traceroute daemons gradually dropped over the following six months. By December, we were measuring less than 15,000 unique Paris Traceroutes per day, even though NDT test volume had grown to over 200,000 tests per day. 
+Unfortunately, while the first installation and startup demonstrated that the Paris Traceroute tool was a huge improvement, it had a race condition that frequently prevented it from restarting successfully when a server rebooted. Maintenance and updates to the M-Lab platform typically results in 5% to 20% of the servers rebooting each week, so the number of machines with properly operating Paris Traceroute daemons gradually dropped over the following six months. By December, we were measuring less than 15,000 unique Paris Traceroutes per day, even though NDT test volume had grown to over 200,000 tests per day.
 
 In late January, a researcher brought to our attention that there was no Paris Traceroute data for Sydney, Australia since July 2016. We initially thought this was a BigQuery pipeline problem, but discovered on February 9 that the raw data was also missing from the BigStore files. This led to the discovery that the daemon was not functioning properly, and we soon discovered the race condition that was the root cause. A related pipeline problem also resulted in data that was collected only being pushed to BigStore, and not to BigQuery.
 
@@ -32,7 +32,7 @@ The bad news is that Paris Traceroute data for the M-Lab platform is very sparse
 
 <div class="table-responsive" markdown="1">
 
-|  year	|  week  |  ndt_tests  |  pt_tests  |   %   |
+| year  |  week  |  ndt_tests  |  pt_tests  |   %   |
 | :-----|:------:|:-----------:|:----------:|:------|
 | 2016  | 21     | 391624      | 220025     | 56.18 |
 | 2016  | 22     | 406367      | 271845     | 66.90 |
@@ -42,7 +42,7 @@ The bad news is that Paris Traceroute data for the M-Lab platform is very sparse
 | 2016  | 26     | 402461      | 321197     | 79.81 |
 | 2016  | 27     | 454424      | 336444     | 74.04 |
 | 2016  | 28     | 468149      | 318792     | 68.10 |
-| 2016  | 29     | 529151      | 291702     | 55.13 | 
+| 2016  | 29     | 529151      | 291702     | 55.13 |
 | 2016  | 30     | 654513      | 309584     | 47.30 |
 | 2016  | 31     | 884118      | 372715     | 42.16 |
 | 2016  | 32     | 968719      | 377798     | 39.00 |
