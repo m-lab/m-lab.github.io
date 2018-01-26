@@ -34,16 +34,17 @@ BigQuery offers a web interface so that you can query M-Lab BigQuery data from y
 Try the following query as an example:
 
 ~~~sql
-Calculate how many NDT tests were performed per day since M-Lab epoch.
+#standardSQL
+-- Calculate how many NDT tests were performed per day since M-Lab began.
+
 SELECT
-  STRFTIME_UTC_USEC(web100_log_entry.log_time * 1000000, '%Y-%m-%d') AS day,
-    COUNT(*) AS num_tests
-  FROM
-    plx.google:m_lab.ndt.all
-  GROUP BY
-    day
-  ORDER BY
-    day ASC;
+  partition_date AS day,
+  COUNT(test_id) AS num_tests
+FROM `measurement-lab.release.ndt_all`
+GROUP BY
+  day
+ORDER BY
+  day ASC;
 ~~~
 
 ## BigQuery Tools in the Google Cloud SDK
@@ -57,22 +58,25 @@ After installation, authentication, and restarting your terminal, BigQuery's com
 Try the following query as an example:
 
 ~~~shell
-$ bq query --format=csv "
--- Calculate how many NDT tests were performed per day since M-Lab epoch.
+$ bq --format=csv query -n 900000 "
+#standardSQL
+-- Calculate how many NDT tests were performed per day since M-Lab began.
 SELECT
-  STRFTIME_UTC_USEC(web100_log_entry.log_time * 1000000, '%Y-%m-%d') AS day,
-  COUNT(*) AS num_tests
-FROM
-  plx.google:m_lab.ndt.all
+  partition_date AS day,
+  COUNT(test_id) AS num_tests
+FROM `measurement-lab.release.ndt_all`
 GROUP BY
   day
 ORDER BY
-  day ASC"
+  day ASC;" > output.csv
 ~~~
 
 If you are new to BigQuery, we suggest that you next consult the following resources:
 
+* [BigQuery Examples]({{ site.baseurl }}/data/docs/bq/examples)
+* [BigQuery Schema]({{ site.baseurl }}/data/docs/bq/schema)
 * [Google's BigQuery documentation](https://cloud.google.com/bigquery/what-is-bigquery){:target="_blank"}
+* [Querying Date Partitioned Tables](https://cloud.google.com/bigquery/docs/querying-partitioned-tables){:target="_blank"}
 * [Google's bq Command-Line Tool Quickstart documentation](https://cloud.google.com/bigquery/bq-command-line-tool-quickstart){:target="_blank"}
 
 ## BigQuery API
@@ -80,8 +84,3 @@ If you are new to BigQuery, we suggest that you next consult the following resou
 Given the resources and expertise, you can develop your own application that uses M-Lab data. To learn more about building a custom application, refer to the [Google Cloud Platform Console documentation](https://cloud.google.com/docs/){:target="_blank"}
 
 **Telescope** is an example of an application that M-Lab developed that uses the BigQuery Python API to download M-Lab data. Telescope is available from M-Lab on [Github](https://github.com/m-lab/telescope){:target="_blank"}.
-
-## Further Reading
-
-* [BigQuery Examples]({{ site.baseurl }}/data/docs/bq/examples)
-* [BigQuery Schema]({{ site.baseurl }}/data/docs/bq/schema)

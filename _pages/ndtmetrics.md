@@ -63,22 +63,18 @@ SELECT
     web100_log_entry.snap.SndLimTimeCwnd +
     web100_log_entry.snap.SndLimTimeSnd)) AS download_Mbps
 FROM
-  [plx.google:m_lab.ndt.all]
+  [measurement-lab:public.ndt]
 WHERE
-  connection_spec.client_geolocation.country_code = 'US'
-  AND web100_log_entry.log_time >= PARSE_UTC_USEC('2017-01-01 00:00:00') / POW(10, 6)
-  AND web100_log_entry.log_time < PARSE_UTC_USEC('2017-01-02 00:00:00') / POW(10, 6)
+  _PARTITIONTIME BETWEEN TIMESTAMP('2017-01-01') AND TIMESTAMP('2017-08-28')
+  AND web100_log_entry.deltas.is_last=true
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.connection_spec.remote_ip)
   AND IS_EXPLICITLY_DEFINED (web100_log_entry.connection_spec.local_ip)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.HCThruOctetsAcked)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.SndLimTimeRwin)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.SndLimTimeCwnd)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.SndLimTimeSnd)
-  AND project = 0
   AND IS_EXPLICITLY_DEFINED(connection_spec.data_direction)
   AND connection_spec.data_direction = 1
-  AND IS_EXPLICITLY_DEFINED(web100_log_entry.is_last_entry)
-  AND web100_log_entry.is_last_entry = True
   AND web100_log_entry.snap.HCThruOctetsAcked >= 8192
   AND (web100_log_entry.snap.SndLimTimeRwin +
     web100_log_entry.snap.SndLimTimeCwnd +
@@ -91,7 +87,7 @@ WHERE
   AND (web100_log_entry.snap.State == 1 OR
     (web100_log_entry.snap.State >= 5 AND
     web100_log_entry.snap.State <= 11))
-  AND blacklist_flags == 0
+  AND anomalies.blacklist_flags == 0
   LIMIT 100
 ```
 
@@ -113,26 +109,23 @@ The complete BigQuery example is:
 SELECT
  8 * (web100_log_entry.snap.HCThruOctetsReceived/web100_log_entry.snap.Duration) AS upload_Mbps
 FROM
-  [plx.google:m_lab.ndt.all]
+  [measurement-lab:public.ndt]
 WHERE
-  connection_spec.client_geolocation.country_code = 'US'
-  AND web100_log_entry.log_time >= PARSE_UTC_USEC('2017-01-01 00:00:00') / POW(10, 6)
-  AND web100_log_entry.log_time < PARSE_UTC_USEC('2017-01-02 00:00:00') / POW(10, 6)
+  _PARTITIONTIME BETWEEN TIMESTAMP('2017-01-01') AND TIMESTAMP('2017-08-28')
+  AND web100_log_entry.deltas.is_last=true
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.connection_spec.remote_ip)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.connection_spec.local_ip)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.HCThruOctetsReceived)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.Duration)
   AND IS_EXPLICITLY_DEFINED(connection_spec.data_direction)
   AND connection_spec.data_direction = 0
-  AND IS_EXPLICITLY_DEFINED(web100_log_entry.is_last_entry)
-  AND web100_log_entry.is_last_entry = True
   AND web100_log_entry.snap.HCThruOctetsReceived >= 8192
   AND web100_log_entry.snap.Duration >= 9000000
   AND web100_log_entry.snap.Duration < 3600000000
   AND (web100_log_entry.snap.State == 1
       OR (web100_log_entry.snap.State >= 5
       AND web100_log_entry.snap.State <= 11))
-  AND blacklist_flags == 0
+  AND anomalies.blacklist_flags == 0
   LIMIT 100
 ```
 
@@ -161,11 +154,10 @@ The complete BigQuery example is:
 SELECT
   web100_log_entry.snap.MinRTT AS min_rtt
 FROM
-  [plx.google:m_lab.ndt.all]
+  [measurement-lab:public.ndt]
 WHERE
-  connection_spec.client_geolocation.country_code = 'US'
-  AND web100_log_entry.log_time >= PARSE_UTC_USEC('2017-01-01 00:00:00') / POW(10, 6)
-  AND web100_log_entry.log_time < PARSE_UTC_USEC('2017-01-02 00:00:00') / POW(10, 6)
+  _PARTITIONTIME BETWEEN TIMESTAMP('2017-01-01') AND TIMESTAMP('2017-08-28')
+  AND web100_log_entry.deltas.is_last=true
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.connection_spec.remote_ip)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.connection_spec.local_ip)
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.HCThruOctetsAcked)
@@ -174,8 +166,6 @@ WHERE
   AND IS_EXPLICITLY_DEFINED(web100_log_entry.snap.SndLimTimeSnd)
   AND IS_EXPLICITLY_DEFINED(connection_spec.data_direction)
   AND connection_spec.data_direction = 1
-  AND IS_EXPLICITLY_DEFINED(web100_log_entry.is_last_entry)
-  AND web100_log_entry.is_last_entry = True
   AND web100_log_entry.snap.HCThruOctetsAcked >= 8192
   AND (web100_log_entry.snap.SndLimTimeRwin +
        web100_log_entry.snap.SndLimTimeCwnd +
@@ -189,6 +179,6 @@ WHERE
   AND (web100_log_entry.snap.State == 1
        OR (web100_log_entry.snap.State >= 5
        AND web100_log_entry.snap.State <= 11))
-  AND blacklist_flags == 0
+  AND anomalies.blacklist_flags == 0
   LIMIT 100
 ```

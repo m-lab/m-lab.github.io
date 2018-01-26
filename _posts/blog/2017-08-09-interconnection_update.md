@@ -9,7 +9,7 @@ categories:
   - research
   - observatory
   - data
-  - data-analysis
+  - data analysis
   - research
 ---
 
