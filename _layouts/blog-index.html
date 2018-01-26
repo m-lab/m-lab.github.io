@@ -14,7 +14,6 @@ layout: default
           {% for post in paginator.posts %}
 
           <article class="blog-entry" id="{{ post.url | prepend: site.baseurl }}">
-
             {% if post.content contains '<!--more-->' %}
               {% assign blog_content = post.content | split:'<!--more-->' | first | split:'</h1>' | last %}
             {% else %}
@@ -31,7 +30,6 @@ layout: default
               {{ blog_content }}
               </div>
             {% endif %}
-
             <p><a href="{{ site.baseurl }}{{ post.url }}" class="read-more-link info-link">Read More</a></p>
           </article> <!-- .blog-entry -->
 
