@@ -36,7 +36,7 @@ deploy:
     local_dir: _site
     on:
       repo: m-lab/m-lab.github.io
-      branch: sandbox
+      branch: sandbox-*
 before_install:
   # The Amazon AWS credentials needed by the cf-s3-inv utility in after_success
   # are stored in a file encrypted with the Travis keys associated with this
