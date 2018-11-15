@@ -16,21 +16,21 @@ deploy:
     local_dir: _site
     on:
       repo: m-lab/m-lab.github.io
-      branch: master
+      tags: true
   - provider: gcs
     access_key_id: GOOGWS5RSVP6RJ3HGCQWGFZG
     secret_access_key:
-      secure: rgcJvvyXdP7ZV/1v7OWwCfCOILsz23gcJ8EhTUqc
+      secure: pdKctNlM2bfEzyFBi9Rr6BYua8hWXsyzUDm5WI4Alr06qLmp1zFNcPymKcihgoE8k2vr85B4BN8HYpUPvPPpzb/KlAZAuUjbKGH0hIklBN4+G+ldt2IBN+2YxYYKYu3bXjKJ5yQOHKCBVU/CR3O6UB+Llp3Ty42OCa71WDfsG2aW6EHGkWV1TljXl3fGVerPfcNeyigIFZ6Qz2Vy0Ay+hzXEZBxjLjUsrWbK5aM6PX7OuErBzKk/kFTlQNkuRQdJs7nS4Y+Pxjyjr6NVd0wjFGqtP+sLjC9hvNaaCHdQ46kA24BqNWwNq1c3++9/0NrEj2MbRrAWNrEcSDskX+XJdV+wantzJ0xQAdqgYUugLj+TSYTKTxrPnwy9WGcWxsfdlrrlnysWVDc1OpQgtXNtU66qwgsjflsOijNeV/XBhR4bOifhRJ80VcQ6KyDWwIAKcJbU8prkMAqr1SqyVbw35gH6ZfHxBcf1CYCEoCGlVn00QPyEQDBkSCFzQC8coSZStGGnxGaebHomxMiOsowM4JIZqjB3RWg+Gf5S6dAZZUQTHoYHAU02Kil+wHmYWEcJ+3eb/FWtNokeZRX3zNCKncBAaZWef+JzMuEtcq67cio/io3z9yglVcWpZz/xGSMOTOVIbHwFIjyzO8cSvp6IWLrlq8MJOge5u0ADgi0rMAE=
     bucket: website.mlab-staging.measurementlab.net
     skip_cleanup: true
     local_dir: _site
     on:
       repo: m-lab/m-lab.github.io
-      branch: staging
+      branch: master
   - provider: gcs
     access_key_id: GOOGWS5RSVP6RJ3HGCQWGFZG
-    secret_access_key:
-      secure: rgcJvvyXdP7ZV/1v7OWwCfCOILsz23gcJ8EhTUqc
+    secret_access_key: 
+      secure: pdKctNlM2bfEzyFBi9Rr6BYua8hWXsyzUDm5WI4Alr06qLmp1zFNcPymKcihgoE8k2vr85B4BN8HYpUPvPPpzb/KlAZAuUjbKGH0hIklBN4+G+ldt2IBN+2YxYYKYu3bXjKJ5yQOHKCBVU/CR3O6UB+Llp3Ty42OCa71WDfsG2aW6EHGkWV1TljXl3fGVerPfcNeyigIFZ6Qz2Vy0Ay+hzXEZBxjLjUsrWbK5aM6PX7OuErBzKk/kFTlQNkuRQdJs7nS4Y+Pxjyjr6NVd0wjFGqtP+sLjC9hvNaaCHdQ46kA24BqNWwNq1c3++9/0NrEj2MbRrAWNrEcSDskX+XJdV+wantzJ0xQAdqgYUugLj+TSYTKTxrPnwy9WGcWxsfdlrrlnysWVDc1OpQgtXNtU66qwgsjflsOijNeV/XBhR4bOifhRJ80VcQ6KyDWwIAKcJbU8prkMAqr1SqyVbw35gH6ZfHxBcf1CYCEoCGlVn00QPyEQDBkSCFzQC8coSZStGGnxGaebHomxMiOsowM4JIZqjB3RWg+Gf5S6dAZZUQTHoYHAU02Kil+wHmYWEcJ+3eb/FWtNokeZRX3zNCKncBAaZWef+JzMuEtcq67cio/io3z9yglVcWpZz/xGSMOTOVIbHwFIjyzO8cSvp6IWLrlq8MJOge5u0ADgi0rMAE=
     bucket: website.mlab-sandbox.measurementlab.net
     skip_cleanup: true
     local_dir: _site
