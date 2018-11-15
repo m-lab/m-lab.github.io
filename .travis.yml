@@ -7,16 +7,36 @@ env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 deploy:
-  provider: s3
-  access_key_id: AKIAIRWAFHZDDWJ37X5A
-  secret_access_key:
-    secure: BlXQIyq/lHCHPGX5YUasTGWHkoL32lZHYG/n1yLBjniht2AKPWBnbQ+oWLJt2d28xZksXaDYQ02rh8lWted0SKhqYUN6dcmrXu8rVwcqpqgihUZsC1yqO4qGZ2qGkeQ2X0+HSKIBJ5VUKrMJiS3YK+N/W00/f9FatrSGvr8HBKSWpKpDiHq7z5kx/ab5Aae0hGyN1Ux6I7jTkYDI6oi9gQFJgv4oMKUt11SVMqnBNXoeOvDnIIkJqSf0hKuSZpeEDoX1FDlEaC/NR11ASlPj1ev+mxuNi1S1WTYFka7tB7piD9TQTv0PxjU+t4+TaH9jkd35eGUW1VeKPrdBtsK2TnCM6zYuM7/4U2i/7ZHf4bRVG8UkL+h32K25b24SQIyJddAzvrz8cM2/TLpqid+xdvay2Ax5T3acsxQhBq+vXVwohhl2q3fu9o6o6Bh8SGnn7XSK3JxE9Z3e8Uqg9JV3Pmgz8VyeYCwjuaV5lyabujQAn6sX8rw0RQ2A35bvQjAkNDiLUsmmOQBuRnnmS6fxeYDWf1D/h+6V0TWqPFQLTNBCjYt7WBDyTAU6i71c8ZDSay2CqVca0djxzXJHuqys5q4gRqXpLkuOiJUJMR8s5NhgQAI6bSCkgsJ/EcJqpSIwI72W+NgBb0I31KeREJXO5UlNmTa7RBFSX02KE23ut/E=
-  bucket: www-measurementlab-net
-  skip_cleanup: true
-  local_dir: _site
-  on:
-    repo: m-lab/m-lab.github.io
-    branch: master
+  - provider: s3
+    access_key_id: AKIAIRWAFHZDDWJ37X5A
+    secret_access_key:
+      secure: BlXQIyq/lHCHPGX5YUasTGWHkoL32lZHYG/n1yLBjniht2AKPWBnbQ+oWLJt2d28xZksXaDYQ02rh8lWted0SKhqYUN6dcmrXu8rVwcqpqgihUZsC1yqO4qGZ2qGkeQ2X0+HSKIBJ5VUKrMJiS3YK+N/W00/f9FatrSGvr8HBKSWpKpDiHq7z5kx/ab5Aae0hGyN1Ux6I7jTkYDI6oi9gQFJgv4oMKUt11SVMqnBNXoeOvDnIIkJqSf0hKuSZpeEDoX1FDlEaC/NR11ASlPj1ev+mxuNi1S1WTYFka7tB7piD9TQTv0PxjU+t4+TaH9jkd35eGUW1VeKPrdBtsK2TnCM6zYuM7/4U2i/7ZHf4bRVG8UkL+h32K25b24SQIyJddAzvrz8cM2/TLpqid+xdvay2Ax5T3acsxQhBq+vXVwohhl2q3fu9o6o6Bh8SGnn7XSK3JxE9Z3e8Uqg9JV3Pmgz8VyeYCwjuaV5lyabujQAn6sX8rw0RQ2A35bvQjAkNDiLUsmmOQBuRnnmS6fxeYDWf1D/h+6V0TWqPFQLTNBCjYt7WBDyTAU6i71c8ZDSay2CqVca0djxzXJHuqys5q4gRqXpLkuOiJUJMR8s5NhgQAI6bSCkgsJ/EcJqpSIwI72W+NgBb0I31KeREJXO5UlNmTa7RBFSX02KE23ut/E=
+    bucket: www-measurementlab-net
+    skip_cleanup: true
+    local_dir: _site
+    on:
+      repo: m-lab/m-lab.github.io
+      branch: master
+  - provider: gcs
+    access_key_id: GOOGWS5RSVP6RJ3HGCQWGFZG
+    secret_access_key:
+      secure: rgcJvvyXdP7ZV/1v7OWwCfCOILsz23gcJ8EhTUqc
+    bucket: website.mlab-staging.measurementlab.net
+    skip_cleanup: true
+    local_dir: _site
+    on:
+      repo: m-lab/m-lab.github.io
+      branch: staging
+  - provider: gcs
+    access_key_id: GOOGWS5RSVP6RJ3HGCQWGFZG
+    secret_access_key:
+      secure: rgcJvvyXdP7ZV/1v7OWwCfCOILsz23gcJ8EhTUqc
+    bucket: website.mlab-sandbox.measurementlab.net
+    skip_cleanup: true
+    local_dir: _site
+    on:
+      repo: m-lab/m-lab.github.io
+      branch: sandbox
 before_install:
   # The Amazon AWS credentials needed by the cf-s3-inv utility in after_success
   # are stored in a file encrypted with the Travis keys associated with this
