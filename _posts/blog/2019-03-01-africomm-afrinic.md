@@ -10,7 +10,7 @@ categories:
   - bigquery
   - research
   - data
-  - traceroute
+  - paris-traceroute
 ---
 
 ![M-Lab and researchers at AFRICOMM-2018]({{ site.baseurl }}/images/blog/africomm-group.jpg)
