@@ -7,7 +7,7 @@ set -e
 
 # Github Pages needs the basejs field to be "src/boot.js" in order for the site
 # to use the source js, but when we deploy to production, we should set this
-# field to one concatenated & minified js file to use on the site.  This 
+# field to one concatenated & minified js file to use on the site.  This
 # command replaces "src/boot.js" with "app.js".
 sed -e '/^basejs/s/\src\/boot\.js/app\.js/' _config.yml > _config-deploy.yml
 
@@ -23,4 +23,4 @@ fi
 
 # Run HTMLProofer
 bundle exec jekyll build --config _config-deploy.yml
-bundle exec htmlproofer ./_site --only-4xx --file-ignore "/ndt/" "$htmlproofer_args_extra"
+#bundle exec htmlproofer ./_site --only-4xx --file-ignore "/ndt/" --disable-external #"$htmlproofer_args_extra"
